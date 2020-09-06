@@ -2,7 +2,7 @@
 
 [Scoreboard](https://ctf.radare.org/scoreboard)
 
-![4th place %)](ing/scoreboard.jpg)
+![4th place %)](ing/scoreboard.png)
 
 # Tasks
 
