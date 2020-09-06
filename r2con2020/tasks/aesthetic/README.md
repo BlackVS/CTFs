@@ -24,7 +24,7 @@ https://github.com/Gr1zz/WhiteBoxAES
 Now we know our opponent - WhiteBOX AES %) 
 
 
-## analisys
+## analysis
 
 Let's check found sources and... we are lucky!!! -> our program is about 100% is https://github.com/Gr1zz/WhiteBoxAES/blob/master/aes_table.c
 
