@@ -1,8 +1,6 @@
 # NoNameBadge 2019 CTF
 
-[NoNameBadge Instruction page](https://www.nonamecon.org/badge)
-
-[Official Leaderboard](https://spynet.techmaker.ua/scores)
+[NoNameBadge Instruction page](https://2019.nonamecon.org/badge)
 
 # Contents
 
