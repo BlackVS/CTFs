@@ -1,5 +1,17 @@
 # eXit
 
+~[](main.png)
+~[](main_dec.png)
+~[](main_strncat.png)
+~[](strlen.png)
+~[](strlen_args.png)
+~[](strlen_dec.png)
+~[](strncat.png)
+~[](strncat_dec.png)
+
+
+
+
 set disable-randomization off
 e asm.emu=1
 pdd 30 @main
