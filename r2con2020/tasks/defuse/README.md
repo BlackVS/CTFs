@@ -1,7 +1,7 @@
 # Defuse
 
 ![](img/defuse_decode.png)
-![](img/defuse_ialowerascii.png)
+![](img/defuse_isalowerascii.png)
 ![](img/defuse_main_asm.png)
 ![](img/defuse_main_dec.png) 
 ![](img/defuse_validation.png)
