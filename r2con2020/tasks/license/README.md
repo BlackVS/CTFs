@@ -4,14 +4,25 @@
 
 ![](img/first_run.png)
 
+We need to know correct size first.
+
+Open binary in Cutter to check.
+
 ## Get correct size
+
+Locate incorrect size warning in the Strings:
 
 ![](img/err_wrong_size_1.png)
 
+Go to the needed string:
+
 ![](img/err_wrong_size_2.png) 
+
+Locate X-Ref to it:
 
 ![](img/err_wrong_size_3.png) 
 
+Due to Cutter didn't show jumps (I don'd know why) I checked X-Refs to 
 ![](img/strlen_0.png)
 
 ![](img/strlen_1.png)
