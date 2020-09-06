@@ -157,5 +157,8 @@ expandedKey[j]= SboxInv[ TBoxes[0][j][0] ]
 Let's code:
 [script](scripts/solve.py)
 
+PS: in first version of script I forgot abot shiftRows which permutes bytes of initial secret key. 
+I.e. to extract secret key from expanded key I had to make reverse permutation (**shiftab_rev** list).
+x can be any value from 0 to 255 - result must be the same. If not - something wrong with tables %)
 
 
