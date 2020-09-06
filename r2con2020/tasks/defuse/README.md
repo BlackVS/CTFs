@@ -1,11 +1,10 @@
-# r2con2020 CTF
+# Defuse
 
-[Scoreboard](https://ctf.radare.org/scoreboard)
+defuse_decode.png  
+defuse_ialowerascii.png  
+defuse_main_asm.png  
+defuse_main_dec.png  
+defuse_validation.png
 
-# Tasks
+bVar1 = (bool)(bVar1 & iVar2 == *(int32_t *)((int64_t)&var_60h + (int64_t)(var_6ch._4_4_ + -1) * 4));
 
- - [eXit, easy, 50](Mr%20Bean%20Walker/blackvs.md)
- - [Hellcode, easy, 50](BruteSearcher/blackvs.md)
- - [Defuse, easy, 50](Binary%20Hero/blackvs.md)
- - [aesthetic, medium, 200](NoNameCon%20SpyNet/blackvs.md)
- - [Radare License Checker, medium, 182](Ployka%20PWNer/blackvs.md)
