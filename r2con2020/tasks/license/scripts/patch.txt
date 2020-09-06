@@ -1,0 +1,3 @@
+radiff2 radarelicensechecker.exe radarelicensechecker_patched.exe 
+
+0x000022ed e87efdffff => 9090909090 0x000022ed

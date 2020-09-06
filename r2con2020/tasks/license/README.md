@@ -1,11 +1,12 @@
-# r2con2020 CTF
+# Radare License Checker
 
-[Scoreboard](https://ctf.radare.org/scoreboard)
-
-# Tasks
-
- - [eXit, easy, 50](Mr%20Bean%20Walker/blackvs.md)
- - [Hellcode, easy, 50](BruteSearcher/blackvs.md)
- - [Defuse, easy, 50](Binary%20Hero/blackvs.md)
- - [aesthetic, medium, 200](NoNameCon%20SpyNet/blackvs.md)
- - [Radare License Checker, medium, 182](Ployka%20PWNer/blackvs.md)
+first_run.png         
+err_wrong_size_1.png  
+err_wrong_size_2.png  
+err_wrong_size_3.png  
+strlen_0.png  
+strlen_1.png
+strlen_2.png
+second_run.png  
+sleep.png     
+script.png      
