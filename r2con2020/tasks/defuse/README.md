@@ -180,7 +180,7 @@ for p in product( ['rule'], 'prxz', 'aio', 'ln', 'ce', ['more'], ['time']):
     print("esil"+"".join(p))
 ```
 
-Just 40 variants - correct flag among them ^)
-(I check - it is true!)
+Just 48 variants - correct flag among them ^)
+(I checked - it is true!)
 
 
