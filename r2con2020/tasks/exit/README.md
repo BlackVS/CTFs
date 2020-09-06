@@ -50,10 +50,10 @@ Go inside pseudo-strlen and check passed arguments:
 ![](img/strlen_args.png)
 
 Remeber that arguments passed via registers in order ( https://en.wikipedia.org/wiki/X86_calling_conventions ):
-RDI, RSI, RDX, RCX, R8, R9
+RDI, RSI, RDX, RCX, R8, R9 :
 
-rdi => Input string
-rsi => some_secret_key
+* rdi => Input string
+* rsi => some_secret_key
 
 Below in the 
 
