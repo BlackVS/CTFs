@@ -181,6 +181,6 @@ for p in product( ['rule'], 'prxz', 'aio', 'ln', 'ce', ['more'], ['time']):
 ```
 
 Just 48 variants - correct flag among them ^)
-(I check - it is true!)
+(I checked - it is true!)
 
 
