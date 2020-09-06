@@ -22,23 +22,35 @@ Locate X-Ref to it:
 
 ![](img/err_wrong_size_3.png) 
 
-Due to Cutter didn't show jumps (I don'd know why) I checked X-Refs to 
+Go back to conditional jump (strlen is hint):
+
 ![](img/strlen_0.png)
 
+Correct size is 0x22 :
+
 ![](img/strlen_1.png)
+
+The same by decompiling:
 
 ![](img/strlen_2.png)
 
 ## Second run
 
+Try run with any 34-bytes key:
+
 ![](img/second_run.png)
 
-## remove anti-bruteforce defence
-
-![](img/sleep.png)
+Ok. Even more - we saw how much correct numbers at the start of tested key (zero in this case %)
 
 ## time to script
 
+But first remember a delay during program run. It seems to be brute-force protection in it.
+
+Remove it - it wasvery easy found by **sleep** call:
+
+![](img/sleep.png)
+
+### 
 ```python
 #!/usr/bin/env python
 
@@ -71,5 +83,7 @@ while i<len(key_mid):
         print(key)
         continue
 ```
+
+Voila :
 
 ![](img/script.png)
