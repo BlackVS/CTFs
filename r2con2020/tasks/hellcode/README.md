@@ -73,7 +73,7 @@ or 'R'
 
 Checking:
 
-![](img/binary0_dummy_success.png)
+![](img/binary0_success.png)
 
 Next we have two choices - manually re-do for each binary or... Sure **OR** - time for scripting:
 
