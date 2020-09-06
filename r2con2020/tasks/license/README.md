@@ -40,15 +40,19 @@ Try run with any 34-bytes key:
 
 ![](img/second_run.png)
 
-Ok. Even more - we saw how much correct numbers at the start of tested key (zero in this case %)
+Ok. Even more - we saw how much correct numbers at the start of tested key (zero in last case %)
 
 ## time to script
 
 But first remember a delay during program run. It seems to be brute-force protection in it.
 
-Remove it - it wasvery easy found by **sleep** call:
+Remove it - it was very easy found by **sleep** call:
 
 ![](img/sleep.png)
+
+I just NOP-ed it.
+
+Script:
 
 ### 
 ```python
