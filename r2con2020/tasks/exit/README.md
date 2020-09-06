@@ -1,54 +1,107 @@
 # eXit
 
-~[](img/main.png)
-~[](img/main_dec.png)
-~[](img/main_strncat.png)
-~[](img/strlen.png)
-~[](img/strlen_args.png)
-~[](img/strlen_dec.png)
-~[](img/strncat.png)
-~[](img/strncat_dec.png)
+## recon
 
+I used both Cutter (for static analisys, on one display) and radare2 as debugger (to gather dynamic data, on second display).
 
+First open in Cutter and decompiler:
 
+![](img/main_dec.png)
 
-set disable-randomization off
-e asm.emu=1
-pdd 30 @main
+First look gives obvious way:
 
-db 0x562c080e7783
-rdi = input
+- Move barrel
+- Enter tunnel
+- Read note
+- Leave
 
-db 0x562c080e74dd
-db 0x560d7d1803a9
+but it is wrong way.
 
-dc
+Investigating deeper I mentioned "strncat_14dd", which inside looks not like strncat %) :
 
-[0x560d7d1803a9]> x 16 @rdi
-- offset -       0 1  2 3  4 5  6 7  8 9  A B  C D  E F  0123456789ABCDEF
-0x560d7e71cac0  5465 7374 0a00 0000 0000 0000 0000 0000  Test............
-[0x560d7d1803a9]> x 16 @rsi
-- offset -       0 1  2 3  4 5  6 7  8 9  A B  C D  E F  0123456789ABCDEF
-0x560d7d18107b  97cd d2d6 c0c7 cd84 ec91 ad62 f5f1 6522  ...........b..e"
-[0x560d7d1803a9]> x 32 @rsi
-- offset -       0 1  2 3  4 5  6 7  8 9  A B  C D  E F  0123456789ABCDEF
-0x560d7d18107b  97cd d2d6 c0c7 cd84 ec91 ad62 f5f1 6522  ...........b..e"
-0x560d7d18108b  5882 b137 613e 5d2b 144c 0000 000a 596f  X..7a>]+.L....Yo
+![](img/strncat_dec.png)
 
-rsi=coded_key1=param_1
+Inside such pseudo-strncat I found strange pseudo-strlen (strlen_13a9)
 
+![](img/strlen_dec.png)
+
+Due to I'me too lazy to decode all stuff I switched to debugger
+
+## debug time
+
+Start debug session:
+
+![](img/main.png)
+
+Locate pseudo-strncat:
+
+![](img/main_strncat.png)
+
+Go inside pseudo-strncat:
+
+![](img/strncat.png)
+
+Locate psedo-strlen:
+
+![](img/strlen.png)
+
+Go inside pseudo-strlen and check passed arguments:
+
+![](img/strlen_args.png)
+
+Remeber that arguments passed via registers in order ( https://en.wikipedia.org/wiki/X86_calling_conventions ):
+RDI, RSI, RDX, RCX, R8, R9
+
+rdi => Input string
+rsi => some_secret_key
+
+Below in the 
+
+```C
         if ((uint8_t)((*(uint8_t *)(param_1 + i) ^ *(uint8_t *)((int64_t)&var_60h + (int64_t)i)) +
                      *(char *)((int64_t)&var_40h + (int64_t)i)) != *(char *)(param_2 + i)) {
             uVar2 = 0;
             goto code_r0x000014a7;
         }
+```
+where:
+- param_1=some_secret_key, 
+- param_2=input text
+- var_40 and var_60 - also some secret keys. Debugging and dumping memory I found that they are same for each check, only param_1 changed i.e. param_1 is coded answer, which can be decoded using var_40 and var_60
 
 
+var_40 and var_60 I dumped from memory (sure I could decode them from set of *mov* operations at the beginning of pseudo-strlen but I'm too lazy, remember?)
+
+I named them as d1 and d2 in the script.
+
+Reversing C-code above I got final script:
+
+```python
+#!/usr/bin/env python3
+
+import os, sys
+
+d1=bytearray.fromhex("deadbeefdeadbeefcafe1337cafe13370102030405060708090a")
+d2=bytearray.fromhex("0a09080706050403020137133713feca37133713fecaefbeadde")
+
+def decode(rx):
+    r=bytearray.fromhex(rx)
+    res=""
+    for i in range(len(r)):
+        v = ( r[i] - d2[i])
+        v = (v+0x100)%0x100
+        #print("{:02x} - {:02x} = {:02x}".format(r[i], d2[i], v))
+        v ^= d1[i]
+        v = (v+0x100)%0x100
+        #print("v ^ {:02x} = {:02x}".format(d1[i], v))
+        res+=chr(v)
+    print(res)
 
 
+decode("97cdd2d6c0c7cd84ec91ad62f5f165225882b137613e5d2b144c")
+decode("9ccde18eb092d791c09eb2")
+decode("97e2e79d")
+```
 
+Last two *secret_code_key* strings were received just entering correct answer and catching param_1 on the next answer.
 
-db 0x562c080e758b
-
-https://en.wikipedia.org/wiki/X86_calling_conventions
-RDI, RSI, RDX, RCX, R8, R9,
