@@ -100,7 +100,7 @@ print(text)
 ```
 
 I added **assert** to catch *different* binaries i.e. I suspected that game is not over %)
-Getting assert I rechecked *different* binary and found other valudationg algorthm, added to script and so on.
+Getting assert I rechecked *different* binary and found other validation algorithm, added it to script and so on.
 
 Final script is:
 
