@@ -1,13 +1,13 @@
 # eXit
 
-~[](main.png)
-~[](main_dec.png)
-~[](main_strncat.png)
-~[](strlen.png)
-~[](strlen_args.png)
-~[](strlen_dec.png)
-~[](strncat.png)
-~[](strncat_dec.png)
+~[](img/main.png)
+~[](img/main_dec.png)
+~[](img/main_strncat.png)
+~[](img/strlen.png)
+~[](img/strlen_args.png)
+~[](img/strlen_dec.png)
+~[](img/strncat.png)
+~[](img/strncat_dec.png)
 
 
 
