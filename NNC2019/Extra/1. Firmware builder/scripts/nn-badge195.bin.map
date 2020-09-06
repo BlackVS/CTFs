@@ -1,0 +1,9 @@
+0x40080ffc
+6
+False 2 32 
+1 nn-badge195.bin.seg1 0x3f400020 0x18 True
+2 nn-badge195.bin.seg2 0x3ffbdb60 0x2bcd0 True
+3 nn-badge195.bin.seg3 0x40080000 0x2f2ec True
+4 nn-badge195.bin.seg4 0x40080400 0x2f6f4 True
+5 nn-badge195.bin.seg5 0x400d0018 0x30010 True
+6 nn-badge195.bin.seg6 0x40080d14 0x101f30 True

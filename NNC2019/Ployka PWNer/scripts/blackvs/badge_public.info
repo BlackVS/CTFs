@@ -1,0 +1,16 @@
+0000: 30 59					; SEQUENCE (59 Bytes)
+0002:    30 13					; SEQUENCE (13 Bytes)
+0004:    |  06 07				; OBJECT_ID (7 Bytes)
+0006:    |  |  2a 86 48 ce 3d 02 01
+         |  |     ; 1.2.840.10045.2.1 ECC
+000d:    |  06 08				; OBJECT_ID (8 Bytes)
+000f:    |     2a 86 48 ce 3d 03 01 07
+         |        ; 1.2.840.10045.3.1.7 ECDSA_P256 (x962P256v1)
+0017:    03 42					; BIT_STRING (42 Bytes)
+0019:       00
+001a:       04 e5 44 3f 05 3e 76 1d  d6 b5 88 65 1f ae 08 9f
+002a:       8c dc a4 5e 92 c3 61 16  37 85 23 6b a9 83 83 19
+003a:       03 9f 58 76 ce 3f c3 5e  37 62 8c 95 16 b3 6e 0f
+004a:       76 be 2b 83 88 a9 f1 f1  9f e7 82 f5 8c aa 2f 39
+005a:       3a
+CertUtil: -asn command completed successfully.

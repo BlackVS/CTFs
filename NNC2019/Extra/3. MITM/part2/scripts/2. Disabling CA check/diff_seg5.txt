@@ -1,0 +1,5 @@
+Comparing files nn-badge.bin.seg5.orig and NN-BADGE.BIN.SEG5
+00000510: 42 00
+00000511: 2F 00
+00000512: 40 00
+00000513: 3F 00

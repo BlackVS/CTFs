@@ -1,0 +1,8 @@
+Entrypoint: 40080ffc
+The number of segments: 6
+1: file=nn-badge195.bin.seg1 map=3f400020 file_ofs=00000018 in_checksum=True
+2: file=nn-badge195.bin.seg2 map=3ffbdb60 file_ofs=0002bcd0 in_checksum=True
+3: file=nn-badge195.bin.seg3 map=40080000 file_ofs=0002f2ec in_checksum=True
+4: file=nn-badge195.bin.seg4 map=40080400 file_ofs=0002f6f4 in_checksum=True
+5: file=nn-badge195.bin.seg5 map=400d0018 file_ofs=00030010 in_checksum=True
+6: file=nn-badge195.bin.seg6 map=40080d14 file_ofs=00101f30 in_checksum=True
