@@ -9,9 +9,10 @@
 [Take a closer look at NoNameBadge Trailer](https://www.youtube.com/watch?v=chfoAWevHMs)
 
 ## Tasks
- - [Mr Bean Walker](Mr Bean Walker/blackvs.md)
+
+ - [Mr Bean Walker](Mr%20Bean%20Walker/blackvs.md)
  - [BruteSearcher](BruteSearcher/blackvs.md)
- - [NoNameCon SpyNet](NoNameCon SpyNet/blackvs.md)
- - [Ployka PWNer](Ployka PWNer/blackvs.md)
- - [Binary Hero](Binary Hero/blackvs.md)
- - [Side Blennel](Side Blennel/blackvs.md)
+ - [NoNameCon SpyNet](NoNameCon%20SpyNet/blackvs.md)
+ - [Ployka PWNer](Ployka%20PWNer/blackvs.md)
+ - [Binary Hero](Binary%20Hero/blackvs.md)
+ - [Side Blennel](Side%20Blennel/blackvs.md)
