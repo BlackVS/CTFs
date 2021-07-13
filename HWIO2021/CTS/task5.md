@@ -48,5 +48,55 @@ Opening in URH and checking spectre gives as clue taht there 6 channels of OOK c
 
 We need "4th from left", it seems to be left is the toward 0 Hz %) i.e. counted from bottom in URH
 
-Width of each band is ~15kHz
+I opened in URH, see ASK modulation, decoded, tried script from Task 3 and... nothing
+
+At these point I stuck at CTF and switched to other tasks %)
+
+My mistake was that I completely relied on autodetect URH engine.
+
+It fails - URH detected 300 samples/symbol but later (after CTF) I found that correct value 350. I found this value by a lot of different tries, divisions etc %)
+
+I.e. to get part 3:
+
+- open "iq-data.cfile" in URH
+- switch spectre view
+- select needed band (4th from bottom i.e from left %)
+- apply narrow band filter
+- choose ASK
+- apply noise level 
+- autodetect (URH gave me 300 samples/bit)
+- set 350 samples
+- copy decoded bits to script from Task 3 and
+
+![band4](img/task5_part3_band4.png)
+
+![band4](img/task5_part3_bits.png)
+
+
+```python
+#!/usr/bin/env python3
+
+signal =  "1111001001010011010010110011101110011011000010111011101010011011010010110010001101001011011100110011101010010011001010110011001101001011011000110110001010110011010010111001101100011011011110111001101101001011101000111100101000101010011110100011"
+
+for shift in range(8):
+    bits=signal[shift:]
+    shifted = [ int("".join(map(str,bits[i:i+8])),2) for i in range(0,len(bits),8)]
+    temp="".join(map(chr,shifted))
+    print(temp.encode())
+```
+
+
+```
+JigsawSidingRefillViscosityEO#
+```
+
+I.e. if connect all three parts together flag should be 
+
+TMCTF{SOS-STEGHIDE-TOOL-F1N1CKY5HUT_4TH#CHAN#FROM#LEFT#SYNC#2A_JigsawSidingRefillViscosityEO#}
+
+
+
+
+
+
 
