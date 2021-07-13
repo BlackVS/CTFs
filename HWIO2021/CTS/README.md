@@ -6,8 +6,10 @@
 [Official info](DESC.md)
 
 ## Useful info
- - [Installing tools](cls-tools.md)
- - [Receiving signal](cls-get-signal.md)
+ - [Installing tools](cts-tools.md)
+ - [Receiving signal](cts-get-signal.md)
+ - [How to run local server](cts-utils.md)
+ - [How signals are sent from server?](cts_signals.md)
 
 ## Tasks
  - [Task1](task1.md)
