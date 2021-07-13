@@ -94,7 +94,7 @@ I.e. if connect all three parts together flag should be
 
 TMCTF{SOS-STEGHIDE-TOOL-F1N1CKY5HUT_4TH#CHAN#FROM#LEFT#SYNC#2A_JigsawSidingRefillViscosityEO#}
 
-
+[Task 6](task6.md)
 
 
 
