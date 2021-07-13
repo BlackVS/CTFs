@@ -27,6 +27,7 @@ Even more - 1's at least 2 in a row, 0's are 1,2,3 ...
 I.e. looks like some additional coding but here my knowledge of coding is of %)
 
 PS: spectre gives ideas that it could be something like GFSK or GMSK 
+PPS: later from discord - **OQPSK** . Don't know that it means - need learn more, try harder %)
 
 Go to [Task 5](task5.md)
 
