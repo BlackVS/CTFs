@@ -1,0 +1,2 @@
+212Mhz
+Symbol rate: 48000

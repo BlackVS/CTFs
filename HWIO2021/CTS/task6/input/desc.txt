@@ -1,0 +1,2 @@
+471Mhz
+Symbol rate: 192000

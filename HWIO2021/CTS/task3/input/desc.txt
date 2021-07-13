@@ -1,0 +1,4 @@
+1200MHz
+Symbol rate: 25000
+
+ 

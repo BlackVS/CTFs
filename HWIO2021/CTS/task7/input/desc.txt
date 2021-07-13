@@ -1,0 +1,4 @@
+212Mhz
+Symbol rate: 48000
+
+"C:\Program Files\Wireshark\tshark.exe" -r data.pcapng -T fields -e usb.capdata -Y usb.capdata > capdata.raw
