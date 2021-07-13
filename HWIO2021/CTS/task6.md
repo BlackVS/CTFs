@@ -36,3 +36,5 @@ Current idea is:
 * each such symbol corresponds to some char, for exampling adding some constant to get ASCII code
 
 ![Part1](img/task6_6.png)
+
+[Task 7](task7.md)
