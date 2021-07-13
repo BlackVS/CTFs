@@ -36,7 +36,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '454000000'
+    value: '212000000'
   states:
     bus_sink: false
     bus_source: false
@@ -48,7 +48,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '128000'
+    value: '48000'
   states:
     bus_sink: false
     bus_source: false
@@ -129,7 +129,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: ./signal1.raw
+    file: ./signal2.raw
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'

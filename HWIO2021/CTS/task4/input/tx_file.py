@@ -85,7 +85,7 @@ class tx_file(gr.top_block, Qt.QWidget):
         ##################################################
         self.server_port_base = server_port_base = 10000
         self.server_bw_per_port = server_bw_per_port = 1000000
-        self.freq_carrier = freq_carrier = 454000000
+        self.freq_carrier = freq_carrier = 15240000000
         self.server_port = server_port = int(server_port_base + (freq_carrier / server_bw_per_port))
         self._server_address_format_config = configparser.ConfigParser()
         self._server_address_format_config.read('config_file')
@@ -93,7 +93,7 @@ class tx_file(gr.top_block, Qt.QWidget):
         except: server_address_format = "tcp://%s:%d"
         self.server_address_format = server_address_format
         self.server_address = server_address = server_address_format % (server_ip, server_port) if server_address_format != "" else ""
-        self.samp_rate = samp_rate = 128000
+        self.samp_rate = samp_rate = 192000
 
         ##################################################
         # Blocks
@@ -169,7 +169,7 @@ class tx_file(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_tag_debug_0 = blocks.tag_debug(gr.sizeof_gr_complex*1, '', "")
         self.blocks_tag_debug_0.set_display(True)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, './signal1.raw', True, 0, 0)
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, './signal4.raw', True, 0, 0)
         self.blocks_file_source_0.set_begin_tag(pmt.PMT_NIL)
 
 
