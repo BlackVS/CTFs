@@ -1,2 +1,2 @@
-﻿454Mhz
+454Mhz
 Symbol rate: 128000 

@@ -85,17 +85,15 @@ class tx_file(gr.top_block, Qt.QWidget):
         ##################################################
         self.server_port_base = server_port_base = 10000
         self.server_bw_per_port = server_bw_per_port = 1000000
-        self.freq_carrier = freq_carrier = 400000000
+        self.freq_carrier = freq_carrier = 454000000
         self.server_port = server_port = int(server_port_base + (freq_carrier / server_bw_per_port))
         self._server_address_format_config = configparser.ConfigParser()
         self._server_address_format_config.read('config_file')
         try: server_address_format = self._server_address_format_config.get("main", "server_address_format")
         except: server_address_format = "tcp://%s:%d"
         self.server_address_format = server_address_format
-        self.variable_tag_object_0 = variable_tag_object_0 = gr.tag_utils.python_to_tag((0, pmt.intern("key"), pmt.intern("value"), pmt.intern("src")))
         self.server_address = server_address = server_address_format % (server_ip, server_port) if server_address_format != "" else ""
-        self.samp_rate = samp_rate = 32000
-        self.freq_signal = freq_signal = 1000
+        self.samp_rate = samp_rate = 128000
 
         ##################################################
         # Blocks
@@ -171,7 +169,7 @@ class tx_file(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_tag_debug_0 = blocks.tag_debug(gr.sizeof_gr_complex*1, '', "")
         self.blocks_tag_debug_0.set_display(True)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, './test.raw', True, 0, 0)
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, './signal1.raw', True, 0, 0)
         self.blocks_file_source_0.set_begin_tag(pmt.PMT_NIL)
 
 
@@ -233,12 +231,6 @@ class tx_file(gr.top_block, Qt.QWidget):
         self.server_address_format = server_address_format
         self.set_server_address(self.server_address_format % (self.server_ip, self.server_port) if self.server_address_format != "" else "")
 
-    def get_variable_tag_object_0(self):
-        return self.variable_tag_object_0
-
-    def set_variable_tag_object_0(self, variable_tag_object_0):
-        self.variable_tag_object_0 = variable_tag_object_0
-
     def get_server_address(self):
         return self.server_address
 
@@ -253,12 +245,6 @@ class tx_file(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
         self.qtgui_sink_x_0.set_frequency_range(400000000, self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
-
-    def get_freq_signal(self):
-        return self.freq_signal
-
-    def set_freq_signal(self, freq_signal):
-        self.freq_signal = freq_signal
 
 
 
