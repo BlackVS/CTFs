@@ -35,3 +35,9 @@ PS: if open hints:
 - The transmission might contain polluted packets.
 - Other default parameters might been tampered, but the capture was at 1Msps.
 - ARFCN 34.
+
+PPS: tried:
+```bash
+grgsm_decode -c telesignal_1msps_cut.complex -a 34 -v -s 1M -m XXX -t YYY
+```
+with different combinations of XXX and YYY - no succes :(
