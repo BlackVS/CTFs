@@ -1,4 +1,4 @@
-# Capture the Segnal, HWIO2021
+# Capture the Signal, HWIO2021
 
 
 [CTFs Home page](https://hardwear.io/usa-2021/ctf.php)
