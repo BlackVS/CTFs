@@ -93,6 +93,8 @@ JigsawSidingRefillViscosityEO#
 I.e. if connect all three parts together flag should be 
 
 TMCTF{SOS-STEGHIDE-TOOL-F1N1CKY5HUT_4TH#CHAN#FROM#LEFT#SYNC#2A_JigsawSidingRefillViscosityEO#}
+
+
 LATE PS: this flag has 2 mistakes - one mistype in DTMF recodvered code and one char wrong in last part) 
 But all process of restoring flag is correct - just do it more carefully than I did %)))
 During GRUCon 2021 CTF I did it more carefully + used samples/symbol rate 360 in the last part.
