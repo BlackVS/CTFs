@@ -1,5 +1,5 @@
 # Hardwear.io Security Trainings and Conference, USA 2021
-## Capture the Segnal, HWIO2021
+## Capture the Signal, HWIO2021
 
 ## 10th Place 
 UAteam
