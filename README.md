@@ -15,3 +15,6 @@ Here is some my write-ups
 
 ## HWIO2021 CTFs
  - [CTS - capture the Signal](HWIO2021/CTS/README.md)
+
+## GRUCon2021
+ - [CTS - capture the Signal](GRUCon2021/README.md)
