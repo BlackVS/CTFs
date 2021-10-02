@@ -1,4 +1,4 @@
-# Task 1
+# Whisper 3
 
 ![text](img/desc.png)
 
