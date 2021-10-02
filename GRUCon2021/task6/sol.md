@@ -23,21 +23,21 @@
 ...and pause width:
 ![00](img/img04.png)
 
-5. I decided convert signal to 012 sequence basing on next consideration:
-- each symbol is 400 samples 
-- at the beginning of such 400 samples we have "strobe" 100 samples width defines the symbol - 0, 1, 2
-- due to URH use only power two FSK size I decided decode as 4FSK with "11" unused i.e. 00->0, 01->1, 10->2
-- symbol with I used equal to 100 not 400. In such case 0->00000000, 1->01000000, 2->10000000
+5. I decided convert signal to 012 sequence basing on the next considerations:
+- each symbol is 400 samples length
+- at the beginning of such 400 samples block we have "strobe" 100 samples width which defines the symbol - 0, 1, 2
+- due to URH uses only power two FSK size i.e.2FSK, 4FSK etc I decided decode as 4FSK with "11" unused i.e. 00->0, 01->1, 10->2
+- I set symbol width equal to 100 not 400. In such case 0->00000000, 1->01000000, 2->10000000
 
 ![00](img/img05.png)
 
 ![00](img/img06.png)
 
-Demodulated bistream saved to [bits.txt](scripts/bits.txt)
+Demodulated bistream was saved to [bits.txt](scripts/bits.txt)
 
-6. To convert bitstream from 5 I wrote simple python [script](scripts/task6.py)
+6. To convert bitstream from p.5 I wrote simple python [script](scripts/task6.py)
 
-As result I got base 3 [string](scripts/out.txt).
+As result I got base 3 sequence [string](scripts/out.txt).
 
 This string is 1 to 1 equal to source signal.
 
