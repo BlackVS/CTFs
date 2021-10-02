@@ -14,7 +14,7 @@
 2. Frequencies - we have hopping between 3 distinct frequencies i.e. 3FSK
 ![00](img/img01.png)
 
-3. Make FFT window minimal as possible - we see that at any moment only one frequencies is used:
+3. Make FFT window minimal as possible - we see that at any moment only one of frequencies is used:
 ![00](img/img02.png)
 
 4. Measure pulse ...:
