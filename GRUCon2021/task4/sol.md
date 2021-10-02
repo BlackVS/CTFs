@@ -20,8 +20,7 @@
 4. Select modulation FSK and bit/symbol=1 and click autodetect:
 ![03](img/img03.png)
 
-5. Get decoded bitstream:
-![04](img/img04.png)
+...and get decoded bitstream:
 
-6. Use we same [script](scripts/task4.py) as in task3.
+6. To decode bistream use we same [script](scripts/task4.py) as in task3.
 
