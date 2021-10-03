@@ -21,26 +21,26 @@ My writeups:
 
 [Tasks graph](img/tasks.png)
 ## Level 1
- - [Task 1](task1/sol.md)
- - [Task 2](task2/sol.md)
+ - [Task 1](task1/README.md)
+ - [Task 2](task2/README.md)
 ## Level 2
- - [Task 3](task3/sol.md)
+ - [Task 3](task3/README.md)
 ## Level 3
- - [Task 4](task4/sol.md)
- - [Task 5](task5/sol.md)
+ - [Task 4](task4/README.md)
+ - [Task 5](task5/README.md)
 ## Level 4
- - [Task 6](task6/sol.md)
- - [Task 7](task7/sol.md)
+ - [Task 6](task6/README.md)
+ - [Task 7](task7/README.md)
 ## Level 5
- - [Task 8](task8/sol.md)
+ - [Task 8](task8/README.md)
 ## Level 6
- - [Task 9](task9/sol.md)
+ - [Task 9](task9/README.md)
 
 ## Surprise level
- - [Surprise Signal 1](surprise/sol.md)
+ - [Surprise Signal 1](surprise/README.md)
 
 ## Ssh! level
- - [Whisper 1](ssh1/sol.md)
- - [Whisper 2](ssh2/sol.md)
- - [Whisper 3](ssh3/sol.md)
- - [Whisper 4](ssh4/sol.md)
+ - [Whisper 1](ssh1/README.md)
+ - [Whisper 2](ssh2/README.md)
+ - [Whisper 3](ssh3/README.md)
+ - [Whisper 4](ssh4/README.md)
