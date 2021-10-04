@@ -1,2 +1,4 @@
 15.24GHz
 Symbol rate: 192000
+
+file=/data/git/CTFs/HWIO2021/CTS/task4/input/signal4.raw,freq=15240000000,rate=192000,repeat=true,throttle=true

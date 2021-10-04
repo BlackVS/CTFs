@@ -82,10 +82,103 @@ Surprise - extracted data much larger comparing to the extrected in my write-p f
 
 ## 2. Demodulating
 
-My suggestion [HWIO2021 CTS, Task 7](https://github.com/BlackVS/CTFs/blob/master/HWIO2021/CTS/task7.md) in was correct - it is GSM signal.
+Basing on [gr-gsm](https://github.com/ptrkrysik/gr-gsm))
+
+My suggestion in [HWIO2021 CTS, Task 7](https://github.com/BlackVS/CTFs/blob/master/HWIO2021/CTS/task7.md) was correct - it is GSM signal.
 
 But why grgsm_decode decoded nothing?
 
 Reson is quite ... silly? Thanks to Don (flamewires team) who pushed me in right direction.
 
-Opening signal using default GNURadio 
+Opening signal using gr-gsm livemon graph ( https://github.com/ptrkrysik/gr-gsm/tree/master/apps, sure replacing input block to File Source - like [here](rgc/grgsm_livemon_file_orig.grc) ) we will see:
+
+![livemon00](img/grc_fft_orig.png)
+
+and now decoded data seen:
+
+![decoded00](img/grc_decoded_orig.png)
+
+If check original [livemon graph](https://github.com/ptrkrysik/gr-gsm/blob/master/apps/grgsm_livemon.grc) more carefully we will see Rotator block which shifts spectre left:
+```
+-2*pi*shiftoff/samp_rate
+```
+Just removing this block (or making it zero) not helps
+
+![livemon00](img/grc_fft_shift_0.png)
+
+but making it opposite sign i.e.:
+
+```
++2*pi*shiftoff/samp_rate
+```
+(or the same as make shiftoff=+400e3):
+
+![livemon00](img/grc_fft_shift_oppo.png)
+
+looks like give us some signal in the middle and
+
+![decoded00](img/grc_decoded_rotated.png)
+
+we see decoded data!!!!
+
+Next what I did - wrote shifted signal to file (adding File Sink in file):
+
+[2file](grc/grgsm_livemon_2file.grc)
+
+Saved file named *telesignal_1msps_rotated.complex32* and later worked with it.
+
+## 3. Decode
+
+Next I did basing on [GSM:Sniffing SMS traffic](https://www.ckn.io/blog/2015/11/29/
+gsm-sniffing-sms-traffic/)
+
+
+Run Wireshak to listen local loppback and filter only gsmtap:
+
+```bash
+sudo wireshark -k -Y gsmtap -i lo
+```
+
+![wr00](img/wr_00.png)
+
+
+Next decode BCCH:
+
+```bash
+grgsm_decode -a 34 -c telesignal_1msps_rotated.complex32 -t 0 -m BCCH
+```
+
+We will decoded packets (like we saw in GNU Radio before but here they are parsed):
+
+![wr00](img/wr_01.png)
+
+... and I stuck here %) during CTF.
+
+Thanks to ElyKar for sharing it's writeup:
+
+Normally, Wireshark should display GSM packets now. We can see some have been correctly decoded, like "System Information" or "Paging Request".
+
+There is one packet of type "Immediate Assignment", which indicates an equipment is connecting to the network.
+
+![wr00](img/wr_02.png)
+
+In this packet, we need the channel description :
+
+- Timeslot (it is 0)
+- SDCCH4
+
+![wr00](img/wr_03.png)
+
+Now, we can decode the control channel of the connection : 
+```
+grgsm_decode -a 34 -c telesignal_1msps_rotated.complex32 -t 0 -m BCCH_SDCCH4 -v -p
+```
+
+We see new packets in Wireshark. In particular, the "Paging Response" indicates that there is no encryption key available, meaning that the data sent won't be encrypted.
+
+![wr00](img/wr_04.png)
+
+Finally, we can see a decoded SMS packet which was not encrypted. We can read the content of the SMS:
+
+![wr00](img/wr_05.png)
+
