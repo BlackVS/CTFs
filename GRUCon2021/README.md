@@ -33,7 +33,6 @@ My writeups:
  - [Task 7](task7/README.md)
 ## Level 5
  - [Task 8](task8/README.md)
-## Level 6
  - [Task 9](task9/README.md)
 
 ## Surprise level
