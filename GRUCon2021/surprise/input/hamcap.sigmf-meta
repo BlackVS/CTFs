@@ -1,0 +1,28 @@
+{
+    "global": {
+        "core:sample_rate": 400000.0,
+        "core:longitude": -118,
+        "core:latitude": 33,
+        "core:hw": "USRP n210 & LFRX; K4KIO Hexbeam Antenna",
+        "core:license": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "core:author": "Kyle Logue, K6OF",
+        "core:description": "Live-Sky from K6OF Home Base",
+        "core:version": "1.0.0",
+        "core:datatype": "ci16_le"
+    },
+    "captures": [
+        {
+            "core:sample_start": 0,
+            "core:frequency": 14199999.999254942,
+            "core:datetime": "2021-09-19T02:10:04Z"
+        }
+    ],
+    "annotations": [
+        {
+            "rotator:status": "Idle",
+            "rotator:azim": 97.1,
+            "core:sample_count": 0,
+            "core:sample_start": 0
+        }
+    ]
+}
