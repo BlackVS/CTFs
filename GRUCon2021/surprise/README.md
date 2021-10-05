@@ -15,6 +15,12 @@ Due to in most cases better have the cf32/complex32 (i.e. complex float) enocded
 
 As result I got cf32 **hamcap.raw** file which used later in GQRX
 
+PS: the same ci16_le to cf32 conversion can be easily done using [SoX](http://sox.sourceforge.net/):
+```
+sox.exe -r 48000 -c2 -t s16 -L hamcap.sigmf-data -c2 -t f32 -L hamcap.raw
+```
+
+
 ![g00](img/gqrx00.png)
 
 ### Part 1: *K6OF is operating in the Amateur Extra part of the band. What's his flag? This will lead you to Part1flag*
