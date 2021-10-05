@@ -154,7 +154,7 @@ We will decoded packets (like we saw in GNU Radio before but here they are parse
 
 ... and I stuck here %) during CTF.
 
-Thanks to ElyKar for sharing it's writeup:
+Thanks to ElyKar for sharing it's [writeup](https://blog.tclaverie.eu/posts/grcon-2021---capture-the-signal/#s7p2):
 
 Normally, Wireshark should display GSM packets now. We can see some have been correctly decoded, like "System Information" or "Paging Request".
 
